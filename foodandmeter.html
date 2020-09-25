@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>converse food and meter</title>
+</head>
+<body>
+<input placeholder="Mời bạn nhập số" id="number" oninput="converse()"/>
+<select id="btn-convert">
+    <option value="foot">foot To Meter</option>
+    <option value="meter">meter To foot</option>
+</select>
+<p id="result"></p>
+<script>
+    function footToMeter(foot) {
+        let meter = 0.305 * foot;
+        return meter + "meter";
+    }
+
+    function meterToFoot(meter) {
+        let foot = 3.279 * meter;
+        return foot + "foot";
+    }
+
+    function converse() {
+        let number = parseInt(document.getElementById("number").value);
+        let output = document.getElementById("btn-convert").value;
+        console.log(output);
+        let result = "";
+        if (output === "foot") result = footToMeter(number);
+        else result = meterToFoot(number);
+        document.getElementById("result").innerText = result;
+    }
+
+</script>
+</body>
+</html>
